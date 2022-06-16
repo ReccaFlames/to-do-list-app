@@ -1,46 +1,53 @@
-# Getting Started with Create React App
+# To-Do List App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+To-do list application client.
 
-## Available Scripts
+## Table of content
+- [Features](#features)
+- [Technologies](#technologies)
+- [Usage](#usage)
+- [Additional Documentation](#additional-documentation)
+- [Sources](#sources)
 
-In the project directory, you can run:
+## Features
+- Display list of items
+- Add new task
 
-### `npm start`
+### Still to be done
+- remove and edit of task
+- Connect with task source (db preferably)
+- Deployment pipelines
+- Setup test
+- dark mode
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Designs
+Designs for this application was prepared with usage of `Figma`. Current state of the designs project can be find unde [this link](https://www.figma.com/file/iykqyLk7tgurLH2raMYNxI/ToDo-App?node-id=0%3A1)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies
+To create this project I used:
+- React: `18.1.0`
+- React router: `5.3.3`
+- React hook form: `7.32.1`
+- React icons: `4.4.0`
+- styled components: `5.1.25`
+- react color: `3.0.6`
+- react day picker: `8.0.7`
+- classnames: `2.3.1`
 
-### `npm test`
+## Usage
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+After you clone this repo to your desktop, go to its root directory and run `yarn install` to install its dependencies.
 
-### `npm run build`
+Once the dependencies are installed, you can run `yarn start` to start the application. You will then be able to access it at `localhost:3000`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Additional Documentation
+- [cra readme](/cra-docs.md)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Sources:
+- [styled-components](https://styled-components.com/docs)
+- [react day picker](https://react-day-picker.js.org)
+- [react-icons](https://react-icons.github.io/react-icons)
+- [react hook form](https://react-hook-form.com/get-started/#Quickstart)
+- [react color](https://casesandberg.github.io/react-color/)
+- [react router](https://reactrouter.com/docs/en/v6)
+- [figma](https://www.figma.com/design/)
