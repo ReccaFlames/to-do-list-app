@@ -10,14 +10,14 @@ const initialState: Array<TaskToDo> = [
         task: 'Lorem ipsum dolor sit',
         scheduleDate: Date.now(),
         state: CompletionState.OPEN,
-        color: "#D3F9D9"
+        color: "#c8ffeb"
     },
     {
         id: "8abafc55-d960-442a-9b28-6adfb118568c",
         task: 'Ut enim ad minim veniam, quis nostrud exercitation',
         scheduleDate: Date.now(),
         state: CompletionState.OPEN,
-        color: "#D3E2F9"
+        color: "#daeaf6"
     },
 ]
 
@@ -31,14 +31,20 @@ export const toDoSlice = createSlice({
             state.push(newTask);
         },
         removeTask: (state, action) => {
-            state = state.filter(task => task.id !== action.payload.id);
+            return state.filter(task => task.id !== action.payload.id);
+        },
+        updateTaskState: (state, {payload}) => {
+            state = updateListItem(payload, state, updateTodoState);
         },
         updateTask: (state, {payload}) => {
-            state = updateListItem(payload, state, updateTodoState);
+            const index = state.findIndex((item: any) => item?.id === payload.id);
+    
+            const updated = {...state[index], ...payload};
+            return  [...state.slice(0, index), updated, ...state.slice(index + 1)];
         },
     },
 })
 
-export const { addTask, removeTask, updateTask } = toDoSlice.actions;
+export const { addTask, removeTask, updateTaskState } = toDoSlice.actions;
 
 export default toDoSlice.reducer;

@@ -1,7 +1,10 @@
 import classNames from "classnames";
 import React from "react";
-import { CgCalendar, CgMoreVerticalAlt } from "react-icons/cg";
+import { CgCalendar, CgPen, CgTrash } from "react-icons/cg";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { useAppDispatch } from "../app/hooks";
+import { removeTask } from "../features/toDoList/toDoSlice";
 import { Color, CompletionState } from "../model";
 import Checkbox from "./Checkbox";
 
@@ -18,6 +21,18 @@ const ListItem = (props: IItem) => {
     const completed = props.state === CompletionState.FINISHED;
     const done = classNames({"text-done": completed});
 
+    const dispatch = useAppDispatch();
+    const navigate = useNavigate();
+
+    const onDeleteHandler = () => {
+        console.log(`🚀 ${props.id}`)
+        dispatch(removeTask({id: props.id}));
+    }
+
+    const onEditClick = () => {
+        navigate(`/update-task/${props.id}`)
+    }
+
     return (
         <Item bgColor={props.color}>
             <Row>
@@ -29,7 +44,8 @@ const ListItem = (props: IItem) => {
                 <SubTitle className={done}><CgCalendar style={{marginRight: ".25rem"}}/>{new Date(props.scheduleDate).toLocaleDateString()}</SubTitle>
             </Col2>
             <Col3>
-                <StyledButton><CgMoreVerticalAlt /></StyledButton>
+                <StyledButton onClick={onEditClick}><CgPen size="1.2rem"/></StyledButton>
+                <StyledButton onClick={onDeleteHandler}><CgTrash size="1.2rem"/></StyledButton>
             </Col3>
             </Row>
         </Item>
@@ -87,5 +103,7 @@ const Col2 = styled.div`
 `
 
 const Col3 = styled.div`
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `

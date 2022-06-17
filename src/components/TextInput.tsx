@@ -5,6 +5,7 @@ import { Color } from "../model";
 
 interface TextInputProps {
     label?: string;
+    defaultValue?: string; 
     color?: Color
     error?: boolean;
     errorMessage?: string;
@@ -12,13 +13,13 @@ interface TextInputProps {
 };
 
 const TextInput = (props: TextInputProps) => {
-    const { label, color, onChange, error, errorMessage } = props;
+    const { label, defaultValue, color, onChange, error, errorMessage } = props;
     const labelClasses = classNames("input-underlined", { "input-danger": error});
 
     return (
         <TextContainer color={color}>
             <label className={labelClasses}>
-                <input required onChange={onChange}/>
+                <input required onChange={onChange} defaultValue={defaultValue}/>
                 <span className="input-label">{label}</span>
                 {errorMessage && <span className="input-helper">{errorMessage}</span>}
             </label>

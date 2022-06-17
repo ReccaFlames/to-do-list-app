@@ -19,7 +19,7 @@ interface TaskForm {
 const colorPickerColors = ["#e8dff5", "#fce1e4", "#fcf4dd", "#ddedea", "#c8ffeb", "#daeaf6"] as Color[];
 const defaultColor = colorPickerColors[0];
 
-const AddTaskForm = () => {
+const AddTaskForm = ({color, defaultDate, task}: {color?: Color, defaultDate?: number, task?: string}) => {
     const { handleSubmit, control } = useForm<TaskForm>();
 
     const dispatch = useAppDispatch();
@@ -40,7 +40,7 @@ const AddTaskForm = () => {
             <Form onSubmit={handleSubmit(onSubmit)}>
                 <Controller 
                     control={control}
-                    defaultValue={defaultColor}
+                    defaultValue={color ?? defaultColor}
                     render={({ field: { onChange, value, ref } }) => (
                         <Center>
                             <CirclePicker
@@ -56,13 +56,13 @@ const AddTaskForm = () => {
                 <Controller
                     control={control}
                     render={({ field: { onChange}}) => (
-                        <TextInput label="Task" onChange={onChange}/>
+                        <TextInput label="Task" defaultValue={task} onChange={onChange}/>
                     )}
                     name="task"
                 />
                 <Controller 
                     control={control}
-                    defaultValue={Date.now()}
+                    defaultValue={defaultDate ?? Date.now()}
                     render={({ field: { onChange, value }}) => (
                         <DatePicker
                             selected={new Date(value)}

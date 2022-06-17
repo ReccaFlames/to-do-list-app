@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { updateTask } from "../features/toDoList/toDoSlice";
+import { updateTaskState } from "../features/toDoList/toDoSlice";
 import { TaskToDo } from "../model";
 import ListItem from "./ListItem";
 
@@ -14,7 +14,7 @@ const List = () => {
 
     const handleChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
         const value = event.target.value;
-        dispatch(updateTask(value))
+        dispatch(updateTaskState(value))
     }, [dispatch]);
 
     return (
