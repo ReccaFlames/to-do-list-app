@@ -1,10 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-const Checkbox = ({id, onChange}:{id: string | number; onChange: (event: React.ChangeEvent<HTMLInputElement>) => void}) => {
+interface CheckboxProps {
+    id: string | number; 
+    defaultChecked?: boolean;
+    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const Checkbox = ({id, defaultChecked, onChange}: CheckboxProps) => {
     return (
         <CheckboxContainer>
-            <input value={id}  type="checkbox" onChange={onChange} />
+            <input value={id} defaultChecked={defaultChecked}  type="checkbox" onChange={onChange} />
         </CheckboxContainer>
     );
 }

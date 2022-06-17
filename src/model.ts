@@ -1,8 +1,8 @@
 export interface TaskToDo {
     id: string;
-    title: string;
+    task: string;
     details?: string;
-    schedule_date: Date;
+    scheduleDate: number;
     state: CompletionState;
     color?: Color;
 }

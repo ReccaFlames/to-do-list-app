@@ -8,23 +8,25 @@ import Checkbox from "./Checkbox";
 interface IItem {
     id: string;
     color?: Color;
-    title: string;
+    task: string;
     state: CompletionState;
-    schedule_date: Date;
+    scheduleDate: number;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const ListItem = (props: IItem) => {
-    const done = classNames({"text-done": props.state === CompletionState.FINISHED});
+    const completed = props.state === CompletionState.FINISHED;
+    const done = classNames({"text-done": completed});
+
     return (
         <Item bgColor={props.color}>
             <Row>
             <Col1>
-                <Checkbox id={props.id} onChange={props.onChange} />
+                <Checkbox id={props.id} defaultChecked={completed} onChange={props.onChange} />
             </Col1>
             <Col2>
-                <Title className={done}>{props.title}</Title>
-                <SubTitle className={done}><CgCalendar />{props.schedule_date.toLocaleDateString()}</SubTitle>
+                <Title className={done}>{props.task}</Title>
+                <SubTitle className={done}><CgCalendar style={{marginRight: ".25rem"}}/>{new Date(props.scheduleDate).toLocaleDateString()}</SubTitle>
             </Col2>
             <Col3>
                 <StyledButton><CgMoreVerticalAlt /></StyledButton>

@@ -10,10 +10,12 @@ To-do list application client.
 - [Sources](#sources)
 
 ## Features
+
+### Completed ✅
 - Display list of items
 - Add new task
 
-### Still to be done
+### Still to be done 👨‍💻
 - remove and edit of task
 - Connect with task source (db preferably)
 - Deployment pipelines

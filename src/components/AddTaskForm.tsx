@@ -7,11 +7,13 @@ import { Color } from "../model";
 import DatePicker from "./DatePicker";
 import { useNavigate } from "react-router-dom";
 import TextInput from "./TextInput";
+import { addTask } from "../features/toDoList/toDoSlice";
+import { useAppDispatch } from "../app/hooks";
 
 interface TaskForm {
     task: string;
     color: Color;
-    schedule_date: Date;
+    scheduleDate: number;
 }
 
 const colorPickerColors = ["#e8dff5", "#fce1e4", "#fcf4dd", "#ddedea", "#c8ffeb", "#daeaf6"] as Color[];
@@ -19,11 +21,13 @@ const defaultColor = colorPickerColors[0];
 
 const AddTaskForm = () => {
     const { handleSubmit, control } = useForm<TaskForm>();
+
+    const dispatch = useAppDispatch();
     
     const navigate = useNavigate();
 
     const onSubmit: SubmitHandler<TaskForm> = data => {
-        console.log(data)
+        dispatch(addTask(data));
         navigate("/");
     };
 
@@ -58,16 +62,16 @@ const AddTaskForm = () => {
                 />
                 <Controller 
                     control={control}
-                    defaultValue={new Date()}
+                    defaultValue={Date.now()}
                     render={({ field: { onChange, value }}) => (
                         <DatePicker
-                            selected={value}
+                            selected={new Date(value)}
                             onSelect={(selectedDate) => {
-                                onChange(selectedDate);
+                                onChange(selectedDate?.getTime());
                             }}
                         />
                     )}
-                    name="schedule_date"
+                    name="scheduleDate"
                 />
                 <Button className="save-btn" text="Save" type="submit" icon={IoSaveOutline} />
             </Form>
