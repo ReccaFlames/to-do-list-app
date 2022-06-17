@@ -14,13 +14,14 @@ To-do list application client.
 ### Completed ✅
 - Display list of items
 - Add new task
+- Remove and edit of task
 
 ### Still to be done 👨‍💻
-- remove and edit of task
+- Dark mode
+- Add User information
 - Connect with task source (db preferably)
 - Deployment pipelines
 - Setup test
-- dark mode
 
 ## Designs
 Designs for this application was prepared with usage of `Figma`. Current state of the designs project can be find unde [this link](https://www.figma.com/file/iykqyLk7tgurLH2raMYNxI/ToDo-App?node-id=0%3A1)
@@ -53,3 +54,8 @@ Once the dependencies are installed, you can run `yarn start` to start the appli
 - [react color](https://casesandberg.github.io/react-color/)
 - [react router](https://reactrouter.com/docs/en/v6)
 - [figma](https://www.figma.com/design/)
+- [css generator](https://cssgenerator.pl/box-shadow-generator/)
+- [uuid generator](https://www.uuidgenerator.net)
+- [lorem ipsum generator](https://loremipsum.io)
+- [typescript documentation](https://www.typescriptlang.org/docs/handbook/intro.html)
+- [react.js documentation](https://reactjs.org/tutorial/tutorial.html)
