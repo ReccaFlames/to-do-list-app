@@ -15,13 +15,23 @@ To-do list application client.
 - Display list of items
 - Add new task
 - Remove and edit of task
+- Displays User information
+- Tasks filtering by state
+- Today tasks counter
 
 ### Still to be done 👨‍💻
 - Dark mode
-- Add User information
-- Connect with task source (db preferably)
-- Deployment pipelines
 - Setup test
+- Deployment pipelines
+- Connect with task source (db preferably)
+- Update designs
+- Draw architecture design
+- Search by task name
+- User login page
+- Authorization service
+- Statistics page
+- Settings page
+- Email service
 
 ## Designs
 Designs for this application was prepared with usage of `Figma`. Current state of the designs project can be find unde [this link](https://www.figma.com/file/iykqyLk7tgurLH2raMYNxI/ToDo-App?node-id=0%3A1)

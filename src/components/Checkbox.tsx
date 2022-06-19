@@ -32,7 +32,7 @@ const CheckboxContainer = styled.div`
         color: black;
         width: 1.5em;
         height: 1.5em;
-        border: 0.15em solid black;
+        border: 0.1rem solid black;
         border-radius: 50%;
         transform: translateY(-0.075em);
     

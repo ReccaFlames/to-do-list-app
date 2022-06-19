@@ -7,7 +7,12 @@ import ListItem from "./ListItem";
 
 const Item = React.memo(ListItem);
 
-const List = () => {
+interface ListProps {
+    filter?: string;
+    filters: any;
+}
+
+const List = ({filter, filters}: ListProps) => {
     const selectorItems = useAppSelector((state) => state.toDo) as Array<TaskToDo>;
 
     const dispatch = useAppDispatch();
@@ -17,9 +22,11 @@ const List = () => {
         dispatch(updateTaskState(value))
     }, [dispatch]);
 
+    type ObjectKey = keyof typeof filters;
+
     return (
         <StyledList>
-            {selectorItems.map((item, index) => {
+            {selectorItems.filter(filters[filter as ObjectKey]).map((item, index) => {
                 return (
                     <Item key={index} {...item} onChange={handleChange} />
                 )
@@ -32,9 +39,7 @@ export default List;
 
 const StyledList = styled.ul`
     list-style: none;
-    padding: 1rem 2rem;
-
-    margin-bottom: 3.5rem;
+    padding: 0;
 
     li:not(:last-child) {
         margin-bottom: 1rem;

@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSelector, createSlice } from "@reduxjs/toolkit";
 import { CompletionState, TaskToDo } from "../../model";
 import {v4 as uuidv4} from 'uuid';
 import { updateListItem } from "../../utils/collectionUtils";
@@ -43,7 +43,12 @@ export const toDoSlice = createSlice({
             return  [...state.slice(0, index), updated, ...state.slice(index + 1)];
         },
     },
-})
+});
+
+const selectTodos = (state: Array<TaskToDo>) => state;
+
+export const selectOpenTasks = createSelector(selectTodos, (todos: Array<TaskToDo>) => todos.filter(item => item.state === CompletionState.OPEN));
+export const selectFinishedTasks = createSelector(selectTodos, (todos: Array<TaskToDo>) => todos.filter(item => item.state === CompletionState.FINISHED));
 
 export const { addTask, removeTask, updateTaskState } = toDoSlice.actions;
 

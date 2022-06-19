@@ -1,31 +1,68 @@
+import { useState } from "react";
 import { CgAddR } from "react-icons/cg";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { RootState } from "../app/store";
+import ButtonsGroup from "../components/ButtonsGroup";
+import Greetings from "../components/Greetings";
 import List from "../components/List";
+import { CompletionState, TaskToDo } from "../model";
 
 const Home = () => {
+
+    const todos = useSelector((state: RootState) => state.toDo);
+
+    const FILTER_MAP = {
+        Today: (item: TaskToDo) => item.scheduleDate >= new Date().setUTCHours(0,0,0,0) && item.scheduleDate <= new Date().setUTCHours(23,59,59,999),
+        Upcoming: (item: TaskToDo) => item.state === CompletionState.OPEN,
+        Finished: (item: TaskToDo) => item.state === CompletionState.FINISHED,
+    }
+
+    const [filter, setFilter] = useState<string>(Object.keys(FILTER_MAP)[0])
+
     return (
-        <main>
+        <div>
             <Header>
-              Task manager
+                Task manager
             </Header>
-            <section>
-                <List />
-            </section>
-            <Navigation>
-                <Button to={"/add-task"}><CgAddR style={{verticalAlign: 'middle', paddingRight: '.25em'}}/><span style={{verticalAlign: 'middle'}}>Add task</span></Button>
-            </Navigation>
-        </main>
+            <StledMain>
+                <ListSection>
+                    <Greetings name="Joe" tasksCounter={todos.filter(FILTER_MAP["Today"]).length} />
+                    <ButtonsGroup buttons={Object.keys(FILTER_MAP)} selected={filter} setSelected={setFilter} />
+                    <ListContainer>
+                        <List filter={filter} filters={FILTER_MAP} />
+                    </ListContainer>
+                </ListSection>
+                <Navigation>
+                    <Button to={"/add-task"}><CgAddR style={{verticalAlign: 'middle', paddingRight: '.25em'}}/><span style={{verticalAlign: 'middle'}}>Add task</span></Button>
+                </Navigation>
+            </StledMain>
+        </div>
     );
 }
 
 export default Home;
 
+const StledMain = styled.main`
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
+const ListSection = styled.section`
+    min-width: 70%;
+`
+
+const ListContainer = styled.div`
+`;
+
 const Header = styled.header`
   display: flex;
   justify-content: center;
-  padding: 1em;
-  font-size: 1rem;
+  padding: 1rem;
+  font-size: 2rem;
   font-weight: 700;
 `;
 
