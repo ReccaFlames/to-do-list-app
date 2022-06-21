@@ -31,8 +31,8 @@ const Button = (props: ButtonProps) => {
 export default Button;
 
 const StyledButton = styled.button`
-    background-color: #000;
-    color: #fff;
+    background-color: ${({theme}) => theme.buttonGroup.active.color};
+    color: ${({theme}) => theme.buttonGroup.active.text};
     border: none;
     padding: .5em 1.5em;
     border-radius: 1.5em;

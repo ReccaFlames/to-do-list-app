@@ -34,9 +34,9 @@ export default ButtonsGroup;
 const StyledGroup = styled.div`
 
     .group-outline-button {
-        background-color: #fff;
-        color: #000;
-        border: 1px solid;
+        background-color: ${({theme}) => theme.buttonGroup.inactive.color};
+        color: ${({theme}) => theme.buttonGroup.inactive.text};
+        border: 1px solid ${({theme}) => theme.buttonGroup.inactive.border};
         border-radius: 2em;
         padding: .5em 1.5em;
     }
@@ -46,7 +46,7 @@ const StyledGroup = styled.div`
     }
 
     .active {
-        background-color: #000;
-        color: #fff;
+        background-color: ${({theme}) => theme.buttonGroup.active.color};
+        color: ${({theme}) => theme.buttonGroup.active.text};
     }
 `;

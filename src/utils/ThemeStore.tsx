@@ -13,7 +13,7 @@ const ThemeStore = ({ children } : { children: React.ReactNode }) => {
     useEffect(() => {
         const localTheme = window.localStorage.getItem("theme");
         localTheme ? setTheme(localTheme) : setMode("light")
-    })
+    }, [])
 
     return (
         <ThemeContext.Provider value={{ theme, setTheme: setMode }}>

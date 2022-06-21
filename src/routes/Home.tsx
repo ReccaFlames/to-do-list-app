@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { RootState } from "../app/store";
 import ButtonsGroup from "../components/ButtonsGroup";
 import Greetings from "../components/Greetings";
+import Header from "../components/Header";
 import List from "../components/List";
 import { CompletionState, TaskToDo } from "../model";
 
@@ -23,9 +24,7 @@ const Home = () => {
 
     return (
         <div>
-            <Header>
-                Task manager
-            </Header>
+            <Header />
             <StledMain>
                 <ListSection>
                     <Greetings name="Joe" tasksCounter={todos.filter(FILTER_MAP["Today"]).length} />
@@ -58,22 +57,14 @@ const ListSection = styled.section`
 const ListContainer = styled.div`
 `;
 
-const Header = styled.header`
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  font-size: 2rem;
-  font-weight: 700;
-`;
-
 const Navigation = styled.nav`
   display: flex;
   justify-content: center;
 `
 
 const Button = styled(Link)`
-  background-color: #000;
-  color: #fff;
+  background-color: ${({theme}) => theme.buttonGroup.active.color};
+  color: ${({theme}) => theme.buttonGroup.active.text}; 
   border: none;
   padding: .5em 1.5em;
   border-radius: 1.5em;

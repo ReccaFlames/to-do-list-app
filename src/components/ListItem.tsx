@@ -83,6 +83,7 @@ const Title = styled.span`
 const SubTitle = styled.span`
     display: flex;
     align-items: center;
+    color: ${({theme}) => theme.subtitle}
 `;
 
 const Row = styled.div`
