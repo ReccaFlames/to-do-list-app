@@ -21,7 +21,6 @@ To-do list application client.
 - Add toggle theme button
 
 ### Still to be done 👨‍💻
-- Style add task page into dark mode
 - Setup test
 - Deployment pipelines
 - Connect with task source (db preferably)
