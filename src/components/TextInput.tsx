@@ -34,7 +34,7 @@ const TextContainer = styled.div<{color?: Color}>`
 
     .input-underlined > input {
         border: none;
-        border-bottom: 0.125rem solid rgba(19, 19, 21, 0.6);
+        border-bottom: 0.125rem solid ${({theme}) => theme.textInput.borderColor};
         display: flex;
         flex-direction: column;
         height: 2rem;
@@ -54,13 +54,13 @@ const TextContainer = styled.div<{color?: Color}>`
         top: 0.9375rem;
         left: 0.875rem;
         line-height: 147.6%;
-        color: rgba(19, 19, 21, 0.6);
+        color: ${({theme}) => theme.textInput.helperColor};
         transition: top .2s;
     }
 
     .input-underlined > .input-helper {
         font-size: 0.9375rem;
-        color: rgba(19, 19, 21, 0.6);
+        color: ${({theme}) => theme.textInput.helperColor};
         letter-spacing: 0.0275rem;
         margin: 0.525rem 0.875rem;
     }
@@ -94,7 +94,7 @@ const TextContainer = styled.div<{color?: Color}>`
 
     .input-underlined > input:disabled + .input-label,
     .input-underlined > input:disabled ~ .input-helper{
-        color: rgba(60, 60, 67, 0.3);
+        color: ${({theme}) => theme.textInput.helperColor};
     }
 
 
@@ -109,6 +109,7 @@ const TextContainer = styled.div<{color?: Color}>`
     }
 
     .input-underlined > input {
-        background: #ffffff;
+        background: transparent;
+        color: ${({theme}) => theme.textInput.textColor};
     }
 `;

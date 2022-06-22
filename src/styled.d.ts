@@ -17,6 +17,17 @@ declare module "styled-components" {
                 color: string;
                 text: string;
             },
-        }
+        },
+
+        datePicker: {
+            color: string,
+            background: string,
+        },
+
+        textInput: {
+            borderColor: string,
+            helperColor: string,
+            textColor: string,
+        },
     }
 }

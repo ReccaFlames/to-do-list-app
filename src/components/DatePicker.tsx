@@ -25,6 +25,11 @@ const StyledDP = styled(DayPicker)`
         background-color: #5eacff;
     }
 
+    .rdp-button:hover:not([aria-disabled='true']) {
+        background-color: ${({theme}) => theme.datePicker.background};
+        color: ${({theme}) => theme.datePicker.color};
+    }
+
     .rdp-day_selected:hover:not([aria-disabled='true']) {
         background-color: #5eacff;
     }

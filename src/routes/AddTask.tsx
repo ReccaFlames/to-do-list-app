@@ -27,6 +27,14 @@ const Header = styled.header`
   font-size: 1rem;
   font-weight: 700;
   align-items: center;
+
+  a {
+      color: ${({theme}) => theme.color};
+  }
+
+  a:visited {
+      color: ${({theme}) => theme.color};
+  }
 `;
 
 const Title = styled.span`
