@@ -19,13 +19,14 @@ To-do list application client.
 - Tasks filtering by state
 - Today tasks counter
 - Add toggle theme button
+- Setup tests
 
 ### Still to be done 👨‍💻
-- Setup test
+- Cover repository with tests
 - Deployment pipelines
-- Connect with task source (db preferably)
 - Update designs
 - Draw architecture design
+- Connect with task source (db preferably)
 - Search by task name
 - User login page
 - Authorization service
