@@ -20,6 +20,7 @@ To-do list application client.
 - Today tasks counter
 - Add toggle theme button
 - Setup tests
+- Add eslint and prettier configuration
 
 ### Still to be done 👨‍💻
 - Cover repository with tests
