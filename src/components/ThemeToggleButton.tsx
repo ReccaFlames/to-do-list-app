@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 interface IThemeToggleButton {
     isDark: boolean;
@@ -11,12 +11,12 @@ const ThemeToggleButton = (props: IThemeToggleButton) => {
 
     return (
         <ContainerLabel
-            title={isDark ? "Activate light mode" : "Activate dark mode"}
-            aria-label={isDark ? "Activate light mode" : "Activate dark mode"}
+            title={isDark ? 'Activate light mode' : 'Activate dark mode'}
+            aria-label={isDark ? 'Activate light mode' : 'Activate dark mode'}
         >
             <input
                 type="checkbox"
-                value={"isDark"}
+                value={'isDark'}
                 checked={!isDark}
                 onChange={onChange}
             />

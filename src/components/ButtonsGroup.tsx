@@ -1,5 +1,5 @@
-import classNames from "classnames";
-import styled from "styled-components";
+import classNames from 'classnames';
+import styled from 'styled-components';
 
 interface ButtonsGrupProps {
     buttons: string[];
@@ -17,7 +17,7 @@ const ButtonsGroup = (props: ButtonsGrupProps) => {
                 <button 
                     key={name} 
                     name={name} 
-                    className={classNames("group-outline-button", { "active": name === selected})}
+                    className={classNames('group-outline-button', { 'active': name === selected})}
                     onClick={() => {
                         setSelected && setSelected(name)
                     }}

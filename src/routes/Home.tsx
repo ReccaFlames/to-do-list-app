@@ -1,14 +1,14 @@
-import { useState } from "react";
-import { CgAddR } from "react-icons/cg";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { RootState } from "../app/store";
-import ButtonsGroup from "../components/ButtonsGroup";
-import Greetings from "../components/Greetings";
-import Header from "../components/Header";
-import List from "../components/List";
-import { CompletionState, TaskToDo } from "../model";
+import { useState } from 'react';
+import { CgAddR } from 'react-icons/cg';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { RootState } from '../app/store';
+import ButtonsGroup from '../components/ButtonsGroup';
+import Greetings from '../components/Greetings';
+import Header from '../components/Header';
+import List from '../components/List';
+import { CompletionState, TaskToDo } from '../model';
 
 const Home = () => {
 
@@ -27,14 +27,14 @@ const Home = () => {
             <Header />
             <StledMain>
                 <ListSection>
-                    <Greetings name="Joe" tasksCounter={todos.filter(FILTER_MAP["Today"]).length} />
+                    <Greetings name="Joe" tasksCounter={todos.filter(FILTER_MAP['Today']).length} />
                     <ButtonsGroup buttons={Object.keys(FILTER_MAP)} selected={filter} setSelected={setFilter} />
                     <ListContainer>
                         <List filter={filter} filters={FILTER_MAP} />
                     </ListContainer>
                 </ListSection>
                 <Navigation>
-                    <Button to={"/add-task"}><CgAddR style={{verticalAlign: 'middle', paddingRight: '.25em'}}/><span style={{verticalAlign: 'middle'}}>Add task</span></Button>
+                    <Button to={'/add-task'}><CgAddR style={{verticalAlign: 'middle', paddingRight: '.25em'}}/><span style={{verticalAlign: 'middle'}}>Add task</span></Button>
                 </Navigation>
             </StledMain>
         </div>

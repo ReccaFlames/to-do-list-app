@@ -1,15 +1,15 @@
-import { CgChevronLeft } from "react-icons/cg";
-import { Link, useParams } from "react-router-dom";
-import styled from "styled-components";
-import { useAppSelector } from "../app/hooks";
-import AddTaskForm from "../components/AddTaskForm";
-import { TaskToDo } from "../model";
+import { CgChevronLeft } from 'react-icons/cg';
+import { Link, useParams } from 'react-router-dom';
+import styled from 'styled-components';
+import { useAppSelector } from '../app/hooks';
+import AddTaskForm from '../components/AddTaskForm';
+import { TaskToDo } from '../model';
 
 const UpdateTask = () => {
 
     const selectorItems = useAppSelector((state) => state.toDo) as Array<TaskToDo>;
     
-    let params = useParams();
+    const params = useParams();
     const item = selectorItems.find(item => item.id === params.id);
 
     return (
@@ -18,7 +18,7 @@ const UpdateTask = () => {
                 <LeftCol><Link to="/"><CgChevronLeft size={32}/></Link></LeftCol>
                 <Title>New task</Title>
             </Header>
-            <div style={{paddingLeft: "2rem", paddingRight: "2rem"}}>
+            <div style={{paddingLeft: '2rem', paddingRight: '2rem'}}>
                 <AddTaskForm task={item?.task} color={item?.color} defaultDate={item?.scheduleDate}/>
             </div>
         </div>

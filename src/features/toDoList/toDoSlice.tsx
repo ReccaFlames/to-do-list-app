@@ -1,23 +1,23 @@
-import { createSelector, createSlice } from "@reduxjs/toolkit";
-import { CompletionState, TaskToDo } from "../../model";
+import { createSelector, createSlice } from '@reduxjs/toolkit';
+import { CompletionState, TaskToDo } from '../../model';
 import {v4 as uuidv4} from 'uuid';
-import { updateListItem } from "../../utils/collectionUtils";
-import { updateTodoState } from "../../utils/toDoUtils";
+import { updateListItem } from '../../utils/collectionUtils';
+import { updateTodoState } from '../../utils/toDoUtils';
 
 const initialState: Array<TaskToDo> = [
     {
-        id: "51c9cf27-45eb-474a-9c7a-c3b1210f445a",
+        id: '51c9cf27-45eb-474a-9c7a-c3b1210f445a',
         task: 'Lorem ipsum dolor sit',
         scheduleDate: Date.now(),
         state: CompletionState.OPEN,
-        color: "#c8ffeb"
+        color: '#c8ffeb'
     },
     {
-        id: "8abafc55-d960-442a-9b28-6adfb118568c",
+        id: '8abafc55-d960-442a-9b28-6adfb118568c',
         task: 'Ut enim ad minim veniam, quis nostrud exercitation',
         scheduleDate: Date.now(),
         state: CompletionState.OPEN,
-        color: "#daeaf6"
+        color: '#daeaf6'
     },
 ]
 
@@ -26,7 +26,7 @@ export const toDoSlice = createSlice({
     initialState,
     reducers: {
         addTask: (state, action) => {
-            let myuuid = uuidv4();
+            const myuuid = uuidv4();
             const newTask = {id: myuuid, state: CompletionState.OPEN, ...action.payload};
             state.push(newTask);
         },

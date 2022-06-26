@@ -1,7 +1,7 @@
-import classNames from "classnames";
-import React from "react";
-import styled from "styled-components";
-import { Color } from "../model";
+import classNames from 'classnames';
+import React from 'react';
+import styled from 'styled-components';
+import { Color } from '../model';
 
 interface TextInputProps {
     label?: string;
@@ -14,7 +14,7 @@ interface TextInputProps {
 
 const TextInput = (props: TextInputProps) => {
     const { label, defaultValue, color, onChange, error, errorMessage } = props;
-    const labelClasses = classNames("input-underlined", { "input-danger": error});
+    const labelClasses = classNames('input-underlined', { 'input-danger': error});
 
     return (
         <TextContainer color={color}>
@@ -78,11 +78,11 @@ const TextContainer = styled.div<{color?: Color}>`
     }
 
     .input-underlined:not(.input-danger) > input:focus + .input-label {
-        color: ${props => props.color ? props.color : "#5eacff"};
+        color: ${props => props.color ? props.color : '#5eacff'};
     }
 
     .input-underlined:not(.input-danger) > input:focus {
-        border-color: ${props => props.color ? props.color : "#5eacff"};
+        border-color: ${props => props.color ? props.color : '#5eacff'};
     }
 
     /** DISABLED **/

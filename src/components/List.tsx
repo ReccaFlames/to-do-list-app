@@ -1,9 +1,9 @@
-import React, { useCallback } from "react";
-import styled from "styled-components";
-import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { updateTaskState } from "../features/toDoList/toDoSlice";
-import { TaskToDo } from "../model";
-import ListItem from "./ListItem";
+import React, { useCallback } from 'react';
+import styled from 'styled-components';
+import { useAppDispatch, useAppSelector } from '../app/hooks';
+import { updateTaskState } from '../features/toDoList/toDoSlice';
+import { TaskToDo } from '../model';
+import ListItem from './ListItem';
 
 const Item = React.memo(ListItem);
 

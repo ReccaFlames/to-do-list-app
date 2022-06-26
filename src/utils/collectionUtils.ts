@@ -1,5 +1,9 @@
-export const updateListItem = <T extends unknown>(id: string, items: Array<T>, updateFunction: (item: T) => void) => {
-    const index = items.findIndex((item: any) => item?.id === id);
+interface ContainsId {
+    id?:  string | number;
+}
+
+export const updateListItem = <T>(id: string, items: Array<T>, updateFunction: (item: T) => void) => {
+    const index = items.findIndex((item: ContainsId) => item?.id === id);
     
     const updated = items[index];
     updateFunction(updated)

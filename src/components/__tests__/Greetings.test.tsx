@@ -1,11 +1,11 @@
-import { render } from "@testing-library/react";
-import Greetings from "../Greetings";
+import { render } from '@testing-library/react';
+import Greetings from '../Greetings';
 
 describe('Greetings component', () => {
 
     it('render correctly', () => {
         const props = {
-            name: "Joe",
+            name: 'Joe',
             tasksCounter: 2,
         } 
         

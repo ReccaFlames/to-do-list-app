@@ -1,11 +1,11 @@
-import classNames from "classnames";
-import styled from "styled-components";
-import { IconType } from "react-icons";
-import React from "react";
+import classNames from 'classnames';
+import styled from 'styled-components';
+import { IconType } from 'react-icons';
+import React from 'react';
 
 interface ButtonProps {
     text: string;
-    type: "button"|"submit"|"reset";
+    type: 'button'|'submit'|'reset';
     className?: string;
     icon?: IconType;
 }
@@ -13,7 +13,7 @@ interface ButtonProps {
 const Button = (props: ButtonProps) => {
     const { type, text, className, icon } = props;
 
-    let btnClass = classNames(className)
+    const btnClass = classNames(className)
 
     return (
         <StyledButton 

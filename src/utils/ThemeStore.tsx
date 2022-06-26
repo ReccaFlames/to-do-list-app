@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react"
-import { ThemeContext } from "./ThemeContext"
+import { useEffect, useState } from 'react'
+import { ThemeContext } from './ThemeContext'
 
 const ThemeStore = ({ children } : { children: React.ReactNode }) => {
 
-    const [theme, setTheme] = useState("light");
+    const [theme, setTheme] = useState('light');
 
     const setMode = (mode: string) => {
-        window.localStorage.setItem("theme", mode);
+        window.localStorage.setItem('theme', mode);
         setTheme(mode);
     }
 
     useEffect(() => {
-        const localTheme = window.localStorage.getItem("theme");
-        localTheme ? setTheme(localTheme) : setMode("light")
+        const localTheme = window.localStorage.getItem('theme');
+        localTheme ? setTheme(localTheme) : setMode('light')
     }, [])
 
     return (

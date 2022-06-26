@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
 export type ThemeContextType = {
     theme: string;
@@ -6,6 +6,6 @@ export type ThemeContextType = {
 };
 
 export const ThemeContext = createContext<ThemeContextType>({
-    theme: "dark",
-    setTheme: (theme) => console.warn("no theme provider"),
+    theme: 'dark',
+    setTheme: (theme) => console.warn('no theme provider'),
 });

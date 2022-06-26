@@ -1,7 +1,7 @@
-import { CgChevronLeft } from "react-icons/cg";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import AddTaskForm from "../components/AddTaskForm";
+import { CgChevronLeft } from 'react-icons/cg';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import AddTaskForm from '../components/AddTaskForm';
 
 const AddTask = () => {
 
@@ -11,7 +11,7 @@ const AddTask = () => {
                 <LeftCol><Link to="/"><CgChevronLeft size={32}/></Link></LeftCol>
                 <Title>New task</Title>
             </Header>
-            <div style={{paddingLeft: "2rem", paddingRight: "2rem"}}>
+            <div style={{paddingLeft: '2rem', paddingRight: '2rem'}}>
                 <AddTaskForm />
             </div>
         </div>

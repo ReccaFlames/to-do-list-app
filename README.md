@@ -70,3 +70,5 @@ Once the dependencies are installed, you can run `yarn start` to start the appli
 - [lorem ipsum generator](https://loremipsum.io)
 - [typescript documentation](https://www.typescriptlang.org/docs/handbook/intro.html)
 - [react.js documentation](https://reactjs.org/tutorial/tutorial.html)
+- [prettier](https://prettier.io/)
+- [eslint](https://eslint.org)

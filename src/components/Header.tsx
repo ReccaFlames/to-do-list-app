@@ -1,15 +1,15 @@
-import { useContext } from "react";
-import { CgUser } from "react-icons/cg";
-import styled from "styled-components";
-import { ThemeContext } from "../utils/ThemeContext";
-import ThemeToggleButton from "./ThemeToggleButton";
+import { useContext } from 'react';
+import { CgUser } from 'react-icons/cg';
+import styled from 'styled-components';
+import { ThemeContext } from '../utils/ThemeContext';
+import ThemeToggleButton from './ThemeToggleButton';
 
 const Header = () => {
 
     const { theme, setTheme } = useContext(ThemeContext);
 
     const changeHandler = () => {
-        const mode = theme === "dark" ? "light" : "dark";
+        const mode = theme === 'dark' ? 'light' : 'dark';
         setTheme(mode);
     }
 
@@ -19,7 +19,7 @@ const Header = () => {
                 <CgUser />
                 <span>Task manager</span>
                 <ThemeToggleButton
-                    isDark={theme === "dark"}
+                    isDark={theme === 'dark'}
                     onChange={changeHandler}
                 />
             </InnerContainer>

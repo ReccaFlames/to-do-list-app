@@ -1,14 +1,14 @@
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { CirclePicker, ColorResult } from 'react-color';
-import styled from "styled-components";
-import Button from "./Button";
-import { IoSaveOutline } from "react-icons/io5";
-import { Color } from "../model";
-import DatePicker from "./DatePicker";
-import { useNavigate } from "react-router-dom";
-import TextInput from "./TextInput";
-import { addTask } from "../features/toDoList/toDoSlice";
-import { useAppDispatch } from "../app/hooks";
+import styled from 'styled-components';
+import Button from './Button';
+import { IoSaveOutline } from 'react-icons/io5';
+import { Color } from '../model';
+import DatePicker from './DatePicker';
+import { useNavigate } from 'react-router-dom';
+import TextInput from './TextInput';
+import { addTask } from '../features/toDoList/toDoSlice';
+import { useAppDispatch } from '../app/hooks';
 
 interface TaskForm {
     task: string;
@@ -16,7 +16,7 @@ interface TaskForm {
     scheduleDate: number;
 }
 
-const colorPickerColors = ["#e8dff5", "#fce1e4", "#fcf4dd", "#ddedea", "#c8ffeb", "#daeaf6"] as Color[];
+const colorPickerColors = ['#e8dff5', '#fce1e4', '#fcf4dd', '#ddedea', '#c8ffeb', '#daeaf6'] as Color[];
 const defaultColor = colorPickerColors[0];
 
 const AddTaskForm = ({color, defaultDate, task}: {color?: Color, defaultDate?: number, task?: string}) => {
@@ -28,7 +28,7 @@ const AddTaskForm = ({color, defaultDate, task}: {color?: Color, defaultDate?: n
 
     const onSubmit: SubmitHandler<TaskForm> = data => {
         dispatch(addTask(data));
-        navigate("/");
+        navigate('/');
     };
 
     const handleChangeComplete = (color: ColorResult, callback?: (...event: any[]) => void) => {

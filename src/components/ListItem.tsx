@@ -1,12 +1,12 @@
-import classNames from "classnames";
-import React from "react";
-import { CgCalendar, CgPen, CgTrash } from "react-icons/cg";
-import { useNavigate } from "react-router-dom";
-import styled from "styled-components";
-import { useAppDispatch } from "../app/hooks";
-import { removeTask } from "../features/toDoList/toDoSlice";
-import { Color, CompletionState } from "../model";
-import Checkbox from "./Checkbox";
+import classNames from 'classnames';
+import React from 'react';
+import { CgCalendar, CgPen, CgTrash } from 'react-icons/cg';
+import { useNavigate } from 'react-router-dom';
+import styled from 'styled-components';
+import { useAppDispatch } from '../app/hooks';
+import { removeTask } from '../features/toDoList/toDoSlice';
+import { Color, CompletionState } from '../model';
+import Checkbox from './Checkbox';
 
 interface IItem {
     id: string;
@@ -19,7 +19,7 @@ interface IItem {
 
 const ListItem = (props: IItem) => {
     const completed = props.state === CompletionState.FINISHED;
-    const done = classNames({"text-done": completed});
+    const done = classNames({'text-done': completed});
 
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
@@ -41,7 +41,7 @@ const ListItem = (props: IItem) => {
             </Col1>
             <Col2>
                 <Title className={done}>{props.task}</Title>
-                <SubTitle className={done}><CgCalendar style={{marginRight: ".25rem"}}/>{new Date(props.scheduleDate).toLocaleDateString()}</SubTitle>
+                <SubTitle className={done}><CgCalendar style={{marginRight: '.25rem'}}/>{new Date(props.scheduleDate).toLocaleDateString()}</SubTitle>
             </Col2>
             <Col3>
                 <StyledButton onClick={onEditClick}><CgPen size="1.2rem"/></StyledButton>

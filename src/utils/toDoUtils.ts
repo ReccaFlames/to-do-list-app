@@ -1,4 +1,4 @@
-import { CompletionState, TaskToDo } from "../model";
+import { CompletionState, TaskToDo } from '../model';
 
 export const updateTodoState = (item: TaskToDo) => {
     if (CompletionState.FINISHED === item.state) {
