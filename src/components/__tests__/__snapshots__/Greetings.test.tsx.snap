@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Greetings component render correctly 1`] = `
+<body>
+  <div>
+    <div>
+      <h1
+        class="sc-bczRLJ gGXxBv"
+      >
+        Hello 
+        Joe
+        ! 👋
+      </h1>
+      <h4
+        class="sc-gsnTZi cIBuFQ"
+      >
+        2
+         tasks for you Today
+      </h4>
+    </div>
+  </div>
+</body>
+`;

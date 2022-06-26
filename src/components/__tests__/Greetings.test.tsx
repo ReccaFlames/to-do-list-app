@@ -9,8 +9,9 @@ describe('Greetings component', () => {
             tasksCounter: 2,
         } 
         
-        const {getByText} = render(<Greetings {...props}/>);
+        const {baseElement} = render(<Greetings {...props}/>);
 
-        expect(getByText("Hello Joe! 👋")).toBeVisible();
+        // expect(getByText("Hello Joe! 👋")).toBeVisible();
+        expect(baseElement).toMatchSnapshot();
     });
 });
