@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import AddTask from './routes/AddTask';
 import Home from './routes/Home';
 import UpdateTask from './routes/UpdateTask';
@@ -9,13 +9,13 @@ function App() {
   return (
     <ThemeStore>
       <Theme>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/add-task" element={<AddTask />} />
             <Route path="/update-task/:id" element={<UpdateTask />} />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </Theme>
     </ThemeStore>
   );
