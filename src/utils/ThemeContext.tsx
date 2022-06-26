@@ -7,5 +7,6 @@ export type ThemeContextType = {
 
 export const ThemeContext = createContext<ThemeContextType>({
     theme: 'dark',
-    setTheme: (theme) => console.warn('no theme provider'),
+    // eslint-disable-next-line
+    setTheme: (_theme) => console.warn('no theme provider'),
 });

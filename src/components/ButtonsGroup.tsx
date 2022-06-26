@@ -4,7 +4,7 @@ import styled from 'styled-components';
 interface ButtonsGrupProps {
     buttons: string[];
     selected?: string;
-    setSelected?: (value: any) => void;
+    setSelected?: (value: string) => void;
 }
 
 const ButtonsGroup = (props: ButtonsGrupProps) => {

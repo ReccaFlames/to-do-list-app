@@ -31,8 +31,9 @@ const AddTaskForm = ({color, defaultDate, task}: {color?: Color, defaultDate?: n
         navigate('/');
     };
 
-    const handleChangeComplete = (color: ColorResult, callback?: (...event: any[]) => void) => {
-        callback && callback(color.hex)
+    // eslint-disable-next-line
+    const handleChangeComplete = (newColor: ColorResult, callback?: (...event: any[]) => void) => {
+        callback && callback(newColor.hex)
     }
 
     return (
@@ -47,7 +48,7 @@ const AddTaskForm = ({color, defaultDate, task}: {color?: Color, defaultDate?: n
                                 ref={ref}
                                 color={value}
                                 colors={colorPickerColors}
-                                onChangeComplete={(color) => handleChangeComplete(color, onChange)}
+                                onChangeComplete={(newColor) => handleChangeComplete(newColor, onChange)}
                             />
                         </Center>
                     )} 

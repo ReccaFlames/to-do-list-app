@@ -9,11 +9,11 @@ const Item = React.memo(ListItem);
 
 interface ListProps {
     filter?: string;
-    filters: any;
+    filters: {Today: (item: TaskToDo) => boolean; Upcoming: (item: TaskToDo) => boolean; Finished: (item: TaskToDo) => boolean};
 }
 
 const List = ({filter, filters}: ListProps) => {
-    const selectorItems = useAppSelector((state) => state.toDo) as Array<TaskToDo>;
+    const selectorItems = useAppSelector((state) => state.toDo);
 
     const dispatch = useAppDispatch();
 
