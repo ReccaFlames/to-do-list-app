@@ -1,6 +1,6 @@
 # To-Do List App
 
-To-do list application client.
+To-do list application client. You can visit test build of application [here](https://reccaflames.github.io/to-do-list-app/).
 
 ## Table of content
 - [Features](#features)
