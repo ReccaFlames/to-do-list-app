@@ -21,10 +21,10 @@ To-do list application client.
 - Add toggle theme button
 - Setup tests
 - Add eslint and prettier configuration
+- Add deployment pipeline
 
 ### Still to be done 👨‍💻
 - Cover repository with tests
-- Deployment pipelines
 - Update designs
 - Draw architecture design
 - Connect with task source (db preferably)
@@ -73,3 +73,5 @@ Once the dependencies are installed, you can run `yarn start` to start the appli
 - [react.js documentation](https://reactjs.org/tutorial/tutorial.html)
 - [prettier](https://prettier.io/)
 - [eslint](https://eslint.org)
+- [github-pages-deploy-action]https://github.com/JamesIves/github-pages-deploy-action
+- [github pages](https://pages.github.com)
