@@ -13,12 +13,11 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
+    "plugins": ["react-hooks", "@typescript-eslint", "prettier"],
     "extends": [
       "eslint:recommended",
       "plugin:@typescript-eslint/eslint-recommended",
       "plugin:@typescript-eslint/recommended",
-      "plugin:react/recommended",
       "prettier"
     ],
     "rules": { 
