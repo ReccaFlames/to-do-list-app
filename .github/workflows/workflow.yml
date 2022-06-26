@@ -11,7 +11,7 @@ jobs:
     concurrency: ci=${{github.ref}}
 
     steps:
-      - name: Checkout
+      - name: Checkout 🛎️
         uses: actions/checkout@v2
 
       - name: Configure Node
@@ -19,10 +19,16 @@ jobs:
         with:
           node-version: '17.4.0'
 
-      - name: Install
+      - name: Install and Build 🔧
         run: |
           npm ci
           npm run build
       
-      - name: Test
+      - name: Test 🧪
         run: npm run test
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: build
