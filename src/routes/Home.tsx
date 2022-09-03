@@ -16,7 +16,9 @@ const Home = () => {
 
     const FILTER_MAP = {
         Today: (item: TaskToDo) => item.scheduleDate >= new Date().setUTCHours(0,0,0,0) && item.scheduleDate <= new Date().setUTCHours(23,59,59,999),
-        Upcoming: (item: TaskToDo) => item.state === CompletionState.OPEN,
+        Upcoming: (item: TaskToDo) => item.state === CompletionState.OPEN && item.scheduleDate >= new Date().setUTCHours(0,0,0,0),
+        Overdue: (item: TaskToDo) => item.state === CompletionState.OPEN && item.scheduleDate < new Date().setUTCHours(0,0,0,0),
+        Open: (item: TaskToDo) => item.state === CompletionState.OPEN,
         Finished: (item: TaskToDo) => item.state === CompletionState.FINISHED,
     }
 

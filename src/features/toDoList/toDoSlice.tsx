@@ -34,7 +34,7 @@ export const toDoSlice = createSlice({
             return state.filter(task => task.id !== action.payload.id);
         },
         updateTaskState: (state, {payload}) => {
-            state = updateListItem(payload, state, updateTodoState);
+            updateListItem(payload, state, updateTodoState);
         },
         updateTask: (state, {payload}) => {
             // eslint-disable-next-line

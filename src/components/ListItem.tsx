@@ -25,7 +25,6 @@ const ListItem = (props: IItem) => {
     const navigate = useNavigate();
 
     const onDeleteHandler = () => {
-        console.log(`🚀 ${props.id}`)
         dispatch(removeTask({id: props.id}));
     }
 

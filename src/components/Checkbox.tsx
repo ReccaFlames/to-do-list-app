@@ -10,7 +10,7 @@ interface CheckboxProps {
 const Checkbox = ({id, defaultChecked, onChange}: CheckboxProps) => {
     return (
         <CheckboxContainer>
-            <input value={id} defaultChecked={defaultChecked}  type="checkbox" onChange={onChange} />
+            <input value={id} checked={defaultChecked} type="checkbox" onChange={onChange} />
         </CheckboxContainer>
     );
 }
